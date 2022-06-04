@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URIa);
 
 app.get('/', async (req, res) => {
     PessoaModel.find({}, (err, result) => {
