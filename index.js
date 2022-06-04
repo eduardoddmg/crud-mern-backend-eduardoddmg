@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const PessoaModel = require('./Models/Pessoa')
 
-require('dotenv').config({ path: './.env' });
+require('dotenv').config();
+
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
