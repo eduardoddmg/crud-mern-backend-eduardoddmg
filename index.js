@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const PessoaModel = require('./Models/Pessoa')
 
+require('dotenv').config({ path: './config.env' });
+const port = process.env.PORT || 5000;
+
 app.use(express.json());
 app.use(cors());
 
@@ -36,6 +39,6 @@ app.put('/editar/:id', async (req, res) => {
     await PessoaModel.findOneAndUpdate({id: req.params.id}, {nome, idade, email})
 })
 
-app.listen('3000', () => {
+app.listen(port, () => {
     console.log('esta funcionando');
 });
