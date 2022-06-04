@@ -36,6 +36,6 @@ app.put('/editar/:id', async (req, res) => {
     await PessoaModel.findOneAndUpdate({id: req.params.id}, {nome, idade, email})
 })
 
-app.listen('3001', () => {
+app.listen(8080, () => {
     console.log('esta funcionando');
 });
