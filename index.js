@@ -10,9 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://admin:12345@cluster0.yrfjf.mongodb.net/crud-mern?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.MONGO_URI);
 
 app.get('/', async (req, res) => {
     PessoaModel.find({}, (err, result) => {
